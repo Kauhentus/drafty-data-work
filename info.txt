@@ -1,0 +1,19 @@
+1) UMass Drafty data validation + analysis (06/08)
+- umass-changes.txt (manual validation notes)
+- analysis-accuracy-parsing.js (parsing script)
+- analysis-accuracy-setup.js
+- analysis-results.txt (result)
+
+2) ORCID api (08/07)
+- query-orcid.js
+- Postman project not included
+
+3) web scraper + query (08/07, 08/19)
+- query-scraper-v1/v2/v3.js (scrape cs department website)
+- query-search.js (search for a professor's homepage)
+
+4) Bing api for homepage + CV (08/19)
+- query-bing.js
+
+5) WIP: Extract degree information from CV (08/19)
+- query-cv-pdf.js

@@ -1,0 +1,13 @@
+/bpa/*
+/node_modules/*
+/query-bing-memo/*
+/query-data/*
+/query-data-v2/*
+/weekly-updates/*
+
+hour-tracker.txt
+notes-from-meeting.txt
+package-lock.json
+temp.txt
+bingapikeys.json
+test.js

@@ -1,0 +1,36 @@
+------------------------
+ANALYSIS RESULTS REPORT
+for University of Massachusetts Amherst
+------------------------
+Professor Breakdown:
+58 professors existing in database
+18 professors to add into database
+10 invalid professors
+66 professors at university (GROUND TRUTH) 
+(N.B. Only professors with Ph.D. students are counted)
+
+Precision + Recall:
+True positives:    48
+False positives:   10
+True negatives:    -
+False negatives:   18
+(N.B. False positives are invalid professors, i.e. wrong institution)
+
+Precision + Recall Analysis:
+Precision:                  82.76%
+Recall:                     72.73%
+
+Error Breakdown:
+6 professors with incorrect data (TOTAL)
+0 professors with updated names
+3 professors with wrong join year
+3 professors with wrong subfield
+0 professors with wrong undergrad
+0 professors with wrong Ph.D.
+(N.B. Invalid professors not included in this tally)
+
+5 errors were mistakes in existing data
+1 errors were missing entries in the database
+Mistake error percentage: 83.33%
+Missing error percentage: 16.67%
+

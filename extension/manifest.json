@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Highlighter Extension",
+    "description": "Highlights CV, Bsc, and PhD keywords on a page",
+    "version": "1.0",
+    "action": {
+      "default_popup": "hello.html",
+      "default_icon": "hello_extensions.png"
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": ["<all_urls>"]
+        }
+    ]
+}
