@@ -26,14 +26,9 @@ for(let i = 0; i < data.length; i++){
 
 let namesTokenized = names
     .map(name => name.toLocaleLowerCase())
-    .map(name => [name, ...name.split(' ').filter(keyword => {
+    .map(name => ({
+        tokens: [name, ...name.split(' ').filter(keyword => {
         return keyword;
-        // return keyword !== 'university' &&
-        //     keyword !== 'of' &&
-        //     keyword !== 'the' &&
-        //     keyword !== 'de' &&
-        //     keyword !== 'college' &&
-        //     keyword !== 'and'
-})]);
+})]}));
 
 fs.writeFileSync('./university-names-data.json', JSON.stringify(namesTokenized));

@@ -1,0 +1,42 @@
+Starts with professor name + institution
+Goal is get their degree locations + join year
+
+1) Which webpage given by Bing is indeed the homepage? (confidence percentage)
+	- webpage has professor's name but its not the homepage
+	- is it a homepage? 
+	
+2) Is the webpage the professor's homepage? (YES/NO)
+	- wrong professor's homepage
+	- is it Dr. XXX's homepage?
+
+
+3) Is the Bsc and PhD information on the page, and if so, what is it?
+	- Use LLM query with ChatGPT/GPT-4
+
+-----
+
+4) Which webpage given by bing is indeed the CV?
+
+5) Is the CV the professor's CV?
+
+6) Extract Bsc and PhD information from CV?
+	- PDF format has no semantic information
+	- Identify Bsc/PhD keyword, and the closest text item that contains university keyword is the Bsc/Phd thing
+	- Search region on CV
+
+-----
+
+* change institutions, need to detect
+* works really well with new professors, everyone has CV + homepage
+
+"a second comment is that you have a nice ability to “train” your tool. 
+because there’s already a lot of good data in drafty, so you can think of input as 
+“given this data that is probably correct, what other data that is not there is likely to be correct”? 
+so then the problem becomes completing the set of data from some starter data, than looking for a specific professor"
+
+1) have professor name, the data is incorrect
+2) have professor name, the data is missing (i.e. no join year)
+3) do not have professor name (i.e. new hire)
+
+- is it for data validation? data discovery?
+- finding error in data is difficult, manually checking every professor not good
