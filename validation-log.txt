@@ -1,0 +1,22 @@
+Validation results:
+5 discrepancies/missing data encountered in 30 entries
+16.67% of data should be reviewed...
+
+Validation log of discrepancies/missing data below:
+
+Discrepancy or missing data found for Andrew S. Lan at University of Massachusetts Amherst:
+ -> Bachelors degree: found data "hong kong university of science and technology", but existing data is "Georgia Institute of Technology"
+
+Discrepancy or missing data found for Barna Saha at University of Massachusetts Amherst:
+ -> Bachelors degree: found data "university of massachusetts, amherst", but existing data is "Jadavpur University"
+
+Discrepancy or missing data found for Eliot Moss at University of Massachusetts Amherst:
+ -> Bachelors degree: found data "university of texas at austin", but existing data is "Massachusetts Institute of Technology"
+
+Discrepancy or missing data found for Evangelos Kalogerakis at University of Massachusetts Amherst:
+ -> Bachelors degree: found data "zhejiang university", but existing data is "Technical University of Crete"
+
+Discrepancy or missing data found for Jack C. Wileden at University of Massachusetts Amherst:
+ -> Bachelors degree: found data "university of southampton", but existing data is "University of Michigan"
+
+

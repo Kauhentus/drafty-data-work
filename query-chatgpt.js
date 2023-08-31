@@ -58,7 +58,8 @@ export const queryGPT = async (link) => {
 
     const countOccurances = (str, regex) => (str.match(regex) || []).length;
     const chunksFlagged = chunks.map(chunk => {
-        const str = chunk.toLocaleLowerCase();
+        const str = " " + chunk.toLocaleLowerCase() + " ";
+        // console.log(str);
         const myCount = countOccurances(str, / my /g) + (str.slice(0, 3) === 'my ' ? 1 : 0);
         const meCount = countOccurances(str, / me /g) + (str.slice(0, 3) === 'me ' ? 1 : 0);
         const iCount = countOccurances(str, / i /g) + (str.slice(0, 2) === 'i ' ? 1 : 0);
@@ -70,9 +71,21 @@ export const queryGPT = async (link) => {
             + countOccurances(str, / university /g) 
             + countOccurances(str, / college /g) 
             + countOccurances(str, / institute /g) 
+            + countOccurances(str, / computer science /g) 
+            + countOccurances(str, /b.a/g) 
+            + countOccurances(str, / ab /g) 
+            + countOccurances(str, /a.b/g) 
+            + countOccurances(str, / ba /g) 
+            + countOccurances(str, /b.s/g) 
+            + countOccurances(str, / bs /g) 
+            + countOccurances(str, /b.sc/g) 
+            + countOccurances(str, / bsc /g) 
+            + countOccurances(str, /ph.d/g) 
+            + countOccurances(str, /phd/g) 
             + countOccurances(str, / school /g) 
             + countOccurances(str, / école /g) 
             + countOccurances(str, / technology /g)
+        // console.log(otherCount)
         const sum = myCount + meCount + iCount + otherCount + pronounCount;
         return [chunk, sum];
     });

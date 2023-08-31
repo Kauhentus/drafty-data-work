@@ -74,10 +74,21 @@ export const sendQuery = async (query, refreshCache = false, n = 3, rerank = tru
             countOccurances(str, />me /g);
         const povSum = myCount + meCount + iCount + otherCount;
 
+        const degreeWeight = countOccurances(str, /b.a/g) 
+            + countOccurances(str, / ab /g) 
+            + countOccurances(str, /a.b/g) 
+            + countOccurances(str, / ba /g) 
+            + countOccurances(str, /b.s/g) 
+            + countOccurances(str, / bs /g) 
+            + countOccurances(str, /b.sc/g) 
+            + countOccurances(str, / bsc /g) 
+            + countOccurances(str, /ph.d/g) 
+            + countOccurances(str, /phd/g);
+
         const fullNameCount = countOccurances(data, new RegExp(name, 'g')) ;
         const lastNameCount = countOccurances(data, new RegExp(lastName, 'g'));
 
-        return [fullNameCount + lastNameCount + 2 * povSum, povSum, i];
+        return [fullNameCount + lastNameCount + 2 * povSum + degreeWeight, povSum, i];
     }).sort((a, b) => b[0] - a[0]);
 
     const reorderedTop3 = rerank ? counters.map(pair => top3Results[pair[2]]) : top3Results;

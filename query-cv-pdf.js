@@ -25,8 +25,17 @@ const uniDict = JSON.parse(fs.readFileSync('./university-names-data.json').toStr
 const uniList = JSON.parse(fs.readFileSync('./university-names-data-2.json').toString())
 
 export const loadCV = async (cvlink) => {
-    const loadingTask = getDocument({url: cvlink, verbosity: 0});
-    const pdfDocument = await loadingTask.promise;
+    let loadingTask, pdfDocument;
+    try {
+        loadingTask = getDocument({url: cvlink, verbosity: 0});
+        pdfDocument = await loadingTask.promise;
+    } catch(e) {
+        return {
+            bachelors: '',
+            doctorate: ''
+        }
+    }
+    
     let runningString = '';
 
     // only process the first page!
@@ -66,7 +75,7 @@ export const loadCV = async (cvlink) => {
 
 
         let ugradKeywords = ['bsc', 'bs.c.', 'b.sc', 'b.s.', 'bs', 'ba', 'b.a.', 'sc.b.', 'bachelor\'s', 'bachelors', 'bachelor', 'b.tech', 'btech']
-        let phdKeywords = ['ph.d.', 'phd', 'doctorate', 'engd', 'deng'];
+        let phdKeywords = ['ph.d.', 'phd', 'doctorate', 'engd', 'deng', 'doctor of'];
 
         const findNode = keywordSet => pageNodes.filter(item => {
             const tokens = item.str.replace(/\.|\,|\:|\(|\)/g, '').split(' ').map(token => token.toLowerCase());
